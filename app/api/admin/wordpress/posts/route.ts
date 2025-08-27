@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { fetchWordPressPosts } from '@/lib/wordpress'
+import { fetchWordPressPosts } from '../../../../../lib/wordpress'
 
 export async function GET(request: NextRequest) {
   try {

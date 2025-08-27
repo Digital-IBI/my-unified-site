@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ContentBlock } from '@/lib/types'
+import { ContentBlock } from '../../../lib/types'
 import { 
   Plus, 
   Edit, 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Category } from '@/lib/types'
-import { validateCategory, validateCategoryUniqueness } from '@/lib/categories'
+import { Category } from '../../../../lib/types'
+import { validateCategory, validateCategoryUniqueness } from '../../../../lib/categories'
 
 // In-memory storage for demo (replace with database in production)
 let categories: Category[] = [

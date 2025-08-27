@@ -3,7 +3,7 @@ import {
   calculatePerformanceScore, 
   analyzeBundleSize,
   PERFORMANCE_GUARDRAILS 
-} from '@/lib/performance'
+} from '../../../../lib/performance'
 
 export async function GET(request: NextRequest) {
   try {

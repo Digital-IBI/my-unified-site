@@ -13,7 +13,7 @@ import {
   optimizeBuild,
   optimizeCaching,
   PERFORMANCE_GUARDRAILS
-} from '@/lib/performance'
+} from '../../../lib/performance'
 
 interface BundleStats {
   chunks: Array<{ name: string; size: number }>

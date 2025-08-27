@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { triggerBuildByHook } from '@/lib/netlify'
+import { triggerBuildByHook } from '../../../../../lib/netlify'
 
 export async function POST(req: Request) {
   try {

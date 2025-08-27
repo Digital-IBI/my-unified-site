@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Category } from '@/lib/types'
+import { Category } from '../../../lib/types'
 import { Plus, Edit, Trash2, Eye, EyeOff, Save, X } from 'lucide-react'
 
 export default function CategoryManagement() {

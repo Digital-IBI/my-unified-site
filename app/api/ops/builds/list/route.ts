@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { listBuilds } from '@/lib/netlify'
+import { listBuilds } from '../../../../../lib/netlify'
 
 export async function GET() {
   try {

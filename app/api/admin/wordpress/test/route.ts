@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { testWordPressConnection } from '@/lib/wordpress'
+import { testWordPressConnection } from '../../../../../lib/wordpress'
 
 export async function GET(request: NextRequest) {
   try {

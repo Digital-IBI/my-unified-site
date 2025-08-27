@@ -1,16 +1,16 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { Category, PageIdentifier } from '@/lib/types'
+import { Category, PageIdentifier } from '../../../../lib/types'
 import { 
   parsePagePath, 
   generateSeoTitle, 
   generateSeoDescription,
   getCategoryBySlug 
-} from '@/lib/categories'
-import { fetchCategories, fetchBlocks, fetchMenus, fetchLocales } from '@/lib/cms'
-import { generateAllStaticParams } from '@/lib/data-generator'
-import CategoryPageTemplate from '@/components/templates/CategoryPageTemplate'
-import { generateAllJsonLd, generateBreadcrumbs } from '@/lib/seo'
+} from '../../../../lib/categories'
+import { fetchCategories, fetchBlocks, fetchMenus, fetchLocales } from '../../../../lib/cms'
+import { generateAllStaticParams } from '../../../../lib/data-generator'
+import CategoryPageTemplate from '../../../../components/templates/CategoryPageTemplate'
+import { generateAllJsonLd, generateBreadcrumbs } from '../../../../lib/seo'
 
 // Generate metadata for the page
 export async function generateMetadata({ 

@@ -1,7 +1,7 @@
 'use client'
 
-import { Category, PageIdentifier, ContentBlock } from '@/lib/types'
-import ContentBlockRenderer from '@/components/blocks/ContentBlockRenderer'
+import { Category, PageIdentifier, ContentBlock } from '../../lib/types'
+import ContentBlockRenderer from '../blocks/ContentBlockRenderer'
 
 interface ConverterTemplateProps {
   category: Category

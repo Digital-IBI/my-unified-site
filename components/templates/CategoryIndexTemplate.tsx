@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Category } from '@/lib/types'
-import Breadcrumbs from '@/components/layout/Breadcrumbs'
-import { generateBreadcrumbs } from '@/lib/seo'
+import { Category } from '../../lib/types'
+import Breadcrumbs from '../layout/Breadcrumbs'
+import { generateBreadcrumbs } from '../../lib/seo'
 
 interface CategoryIndexTemplateProps {
   category: Category

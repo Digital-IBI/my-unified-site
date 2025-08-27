@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { SeoValidationResult, validateSeo, validateSeoConsistency } from '@/lib/seo-validator'
+import { SeoValidationResult, validateSeo, validateSeoConsistency } from '../../../lib/seo-validator'
 
 interface SeoPageData {
   url: string

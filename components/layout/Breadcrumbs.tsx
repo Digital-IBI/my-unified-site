@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BreadcrumbItem } from '@/lib/seo'
+import { BreadcrumbItem } from '../../lib/seo'
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[]

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { fetchCategories } from '@/lib/cms'
+import { fetchCategories } from '../lib/cms'
 
 export default async function Home() {
   const categories = await fetchCategories()

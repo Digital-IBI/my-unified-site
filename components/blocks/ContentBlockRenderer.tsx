@@ -1,6 +1,6 @@
 'use client'
 
-import { ContentBlock } from '@/lib/types'
+import { ContentBlock } from '../../lib/types'
 import { useState, useEffect } from 'react'
 import BenefitBlock from './BenefitBlock'
 import CtaBlock from './CtaBlock'

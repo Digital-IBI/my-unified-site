@@ -3,8 +3,8 @@ import {
   generateAllUrls, 
   chunkUrls, 
   validateSitemapUrls
-} from '@/lib/sitemap-generator'
-import { generateUrlsetXml } from '@/lib/sitemap'
+} from '../../../lib/sitemap-generator'
+import { generateUrlsetXml } from '../../../lib/sitemap'
 
 interface RouteParams {
   params: Promise<{ filename: string }>

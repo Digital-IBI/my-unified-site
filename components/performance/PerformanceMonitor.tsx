@@ -6,7 +6,7 @@ import {
   PerformanceReport, 
   calculatePerformanceScore,
   getPerformanceMetrics 
-} from '@/lib/performance'
+} from '../../lib/performance'
 
 interface PerformanceMonitorProps {
   showDetails?: boolean

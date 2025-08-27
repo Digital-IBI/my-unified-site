@@ -1,6 +1,6 @@
 'use client'
 
-import { ContentBlock } from '@/lib/types'
+import { ContentBlock } from '../../lib/types'
 
 interface PromoBlockProps {
   block: ContentBlock

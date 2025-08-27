@@ -4,7 +4,7 @@ import {
   chunkUrls, 
   validateSitemapUrls,
   getSitemapStats
-} from '@/lib/sitemap-generator'
+} from '../../../../lib/sitemap-generator'
 
 export async function GET(request: NextRequest) {
   try {

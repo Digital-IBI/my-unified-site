@@ -1,6 +1,6 @@
 'use client'
 
-import { MenuItem } from '@/lib/types'
+import { MenuItem } from '../../lib/types'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { ContentBlock } from '@/lib/types'
-import { validateBlock, validateBlockConstraints } from '@/lib/blocks'
+import { ContentBlock } from '../../../../lib/types'
+import { validateBlock, validateBlockConstraints } from '../../../../lib/blocks'
 
 // In-memory storage for demonstration (replace with database in production)
 let blocks: ContentBlock[] = [
