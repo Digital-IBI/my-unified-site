@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
 interface Locale {
   code: string
@@ -11,7 +11,7 @@ interface Locale {
 
 // In-memory storage reference (same as main locales route)
 // In production, this would be a database reference
-let locales: Locale[] = []
+const locales: Locale[] = []
 
 function generateCSV(locales: Locale[]): string {
   const headers = ['code', 'name', 'nativeName', 'isActive', 'isDefault', 'createdAt']

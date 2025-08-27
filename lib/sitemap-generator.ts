@@ -300,7 +300,7 @@ export class SitemapGenerator {
   }
 
   // Generate sitemap files
-  async generateSitemaps(outputDir: string = 'public/sitemaps') {
+  async generateSitemaps() {
     const allPages = [...this.programmaticPages, ...this.cmsPages]
     const chunks = this.chunkPages(allPages)
     

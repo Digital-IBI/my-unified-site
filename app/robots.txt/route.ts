@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { 
   generateAllUrls, 
   chunkUrls, 
   generateRobotsTxt
 } from '../../lib/sitemap-generator'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Generate all URLs to determine chunking
     const urls = await generateAllUrls()

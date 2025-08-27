@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { testWordPressConnection } from '../../../../../lib/wordpress'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const result = await testWordPressConnection()
     
