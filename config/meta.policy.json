@@ -1,0 +1,6 @@
+{
+  "currency_page": {
+    "title": "{base}/{quote} Converter — Live Rate & History | {brand}",
+    "description": "Convert {base} to {quote} with live rate, quick amounts, and {range} history charts."
+  }
+}

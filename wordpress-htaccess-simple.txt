@@ -1,0 +1,43 @@
+# WordPress .htaccess for Next.js Integration
+# Copy this entire content to your WordPress .htaccess file
+
+RewriteEngine On
+
+# Route Next.js app requests to Netlify
+# Replace YOUR_NETLIFY_URL with your actual Netlify URL
+RewriteCond %{REQUEST_URI} ^/(currency|swift|admin|en|hi|fr|es|de|sitemap\.xml|robots\.txt|sitemaps)/.*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ https://YOUR_NETLIFY_URL/$1 [P,L]
+
+# Route API requests to Next.js
+RewriteCond %{REQUEST_URI} ^/api/.*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ https://YOUR_NETLIFY_URL/$1 [P,L]
+
+# WordPress default rules (keep these)
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>

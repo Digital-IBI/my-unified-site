@@ -1,0 +1,5 @@
+{
+  "chunk_limit": 50000,
+  "chunk_by": ["category", "locale", "alpha"],
+  "alpha_buckets": "A-Z"
+}

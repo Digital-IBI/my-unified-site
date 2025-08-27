@@ -1,0 +1,5 @@
+{
+  "routes": [
+    { "pattern": "/currency/:base-:quote/", "template": "currency" }
+  ]
+}

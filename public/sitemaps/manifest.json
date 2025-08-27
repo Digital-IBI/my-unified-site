@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "url": "https://www.example.com/sitemaps/example.en.xml",
+      "locale": "en",
+      "category": "example",
+      "count": 1,
+      "lastmod": "2025-08-26T05:58:04.706Z"
+    }
+  ]
+}
