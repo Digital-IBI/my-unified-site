@@ -26,10 +26,194 @@ export default function Header({ locale }: HeaderProps) {
         const response = await fetch('/api/admin/wordpress/menu')
         if (response.ok) {
           const data = await response.json()
-          setWordPressMenu(data.items || [])
+          if (data.success && data.items.length > 0) {
+            setWordPressMenu(data.items)
+          } else {
+            // Fallback to static menu based on WordPress pages
+            setWordPressMenu([
+              {
+                ID: 1,
+                title: 'Home',
+                url: 'https://seashell-owl-443814.hostingersite.com/',
+                target: '_self',
+                classes: [],
+                children: []
+              },
+              {
+                ID: 2,
+                title: 'About Us',
+                url: 'https://seashell-owl-443814.hostingersite.com/about-us/',
+                target: '_self',
+                classes: [],
+                children: []
+              },
+              {
+                ID: 3,
+                title: 'Services',
+                url: 'https://seashell-owl-443814.hostingersite.com/services/',
+                target: '_self',
+                classes: [],
+                children: []
+              },
+              {
+                ID: 4,
+                title: 'Works',
+                url: 'https://seashell-owl-443814.hostingersite.com/works/',
+                target: '_self',
+                classes: [],
+                children: []
+              },
+              {
+                ID: 5,
+                title: 'Tools',
+                url: '#',
+                target: '_self',
+                classes: [],
+                children: [
+                  {
+                    ID: 6,
+                    title: 'Currency Converter',
+                    url: '/en/currency',
+                    target: '_self',
+                    classes: [],
+                    children: []
+                  },
+                  {
+                    ID: 7,
+                    title: 'SWIFT Codes',
+                    url: '/en/swift',
+                    target: '_self',
+                    classes: [],
+                    children: []
+                  }
+                ]
+              }
+            ])
+          }
+        } else {
+          // Fallback to static menu
+          setWordPressMenu([
+            {
+              ID: 1,
+              title: 'Home',
+              url: 'https://seashell-owl-443814.hostingersite.com/',
+              target: '_self',
+              classes: [],
+              children: []
+            },
+            {
+              ID: 2,
+              title: 'About Us',
+              url: 'https://seashell-owl-443814.hostingersite.com/about-us/',
+              target: '_self',
+              classes: [],
+              children: []
+            },
+            {
+              ID: 3,
+              title: 'Services',
+              url: 'https://seashell-owl-443814.hostingersite.com/services/',
+              target: '_self',
+              classes: [],
+              children: []
+            },
+            {
+              ID: 4,
+              title: 'Works',
+              url: 'https://seashell-owl-443814.hostingersite.com/works/',
+              target: '_self',
+              classes: [],
+              children: []
+            },
+            {
+              ID: 5,
+              title: 'Tools',
+              url: '#',
+              target: '_self',
+              classes: [],
+              children: [
+                {
+                  ID: 6,
+                  title: 'Currency Converter',
+                  url: '/en/currency',
+                  target: '_self',
+                  classes: [],
+                  children: []
+                },
+                {
+                  ID: 7,
+                  title: 'SWIFT Codes',
+                  url: '/en/swift',
+                  target: '_self',
+                  classes: [],
+                  children: []
+                }
+              ]
+            }
+          ])
         }
       } catch (error) {
         console.error('Failed to fetch WordPress menu:', error)
+        // Fallback to static menu
+        setWordPressMenu([
+          {
+            ID: 1,
+            title: 'Home',
+            url: 'https://seashell-owl-443814.hostingersite.com/',
+            target: '_self',
+            classes: [],
+            children: []
+          },
+          {
+            ID: 2,
+            title: 'About Us',
+            url: 'https://seashell-owl-443814.hostingersite.com/about-us/',
+            target: '_self',
+            classes: [],
+            children: []
+          },
+          {
+            ID: 3,
+            title: 'Services',
+            url: 'https://seashell-owl-443814.hostingersite.com/services/',
+            target: '_self',
+            classes: [],
+            children: []
+          },
+          {
+            ID: 4,
+            title: 'Works',
+            url: 'https://seashell-owl-443814.hostingersite.com/works/',
+            target: '_self',
+            classes: [],
+            children: []
+          },
+          {
+            ID: 5,
+            title: 'Tools',
+            url: '#',
+            target: '_self',
+            classes: [],
+            children: [
+              {
+                ID: 6,
+                title: 'Currency Converter',
+                url: '/en/currency',
+                target: '_self',
+                classes: [],
+                children: []
+              },
+              {
+                ID: 7,
+                title: 'SWIFT Codes',
+                url: '/en/swift',
+                target: '_self',
+                classes: [],
+                children: []
+              }
+            ]
+          }
+        ])
       } finally {
         setLoading(false)
       }
