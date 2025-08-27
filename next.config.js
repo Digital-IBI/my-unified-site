@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure for subdirectory deployment
-  basePath: process.env.NODE_ENV === 'production' ? '/tools' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/tools' : '',
-  
   // Experimental features
   experimental: {
     serverActions: {
