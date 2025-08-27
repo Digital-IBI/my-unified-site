@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { Category } from '../../../lib/types'
 import { getCategoryBySlug } from '../../../lib/categories'
 import { fetchCategories, fetchLocales } from '../../../lib/cms'
 import { generateSampleIdentifiers } from '../../../lib/data-generator'
-import { generateAllJsonLd, generateBreadcrumbs } from '../../../lib/seo'
+import { generateAllJsonLd } from '../../../lib/seo'
 import CategoryIndexTemplate from '../../../components/templates/CategoryIndexTemplate'
 
 interface CategoryPageProps {

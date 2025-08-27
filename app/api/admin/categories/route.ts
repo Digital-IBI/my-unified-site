@@ -3,7 +3,7 @@ import { Category } from '../../../../lib/types'
 import { validateCategory, validateCategoryUniqueness } from '../../../../lib/categories'
 
 // In-memory storage for demo (replace with database in production)
-let categories: Category[] = [
+const categories: Category[] = [
   {
     id: 'currency-converter',
     name: 'Currency Converter',

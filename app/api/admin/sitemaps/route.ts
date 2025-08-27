@@ -6,7 +6,7 @@ import {
   getSitemapStats
 } from '../../../../lib/sitemap-generator'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Generate all URLs
     const urls = await generateAllUrls()
@@ -28,8 +28,7 @@ export async function GET(request: NextRequest) {
         errors: validation.errors,
         totalUrls: urls.length,
       },
-      chunks: chunks.map((chunk, index) => ({
-        index,
+      chunks: chunks.map((chunk) => ({
         filename: chunk.filename,
         urlCount: chunk.urls.length,
         sizeBytes: chunk.size,
