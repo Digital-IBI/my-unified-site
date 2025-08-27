@@ -94,17 +94,11 @@ export default function CategoryPageTemplate({
   )
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header menus={menus} locale={locale} />
-      
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Breadcrumbs items={breadcrumbs} />
-        </div>
-        {renderTemplate()}
-      </main>
-      
-      <Footer menus={menus} locale={locale} />
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-6">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+      {renderTemplate()}
     </div>
   )
 }

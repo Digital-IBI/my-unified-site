@@ -1,91 +1,85 @@
 'use client'
 
-import { MenuItem } from '../../lib/types'
 import Link from 'next/link'
 
-interface FooterProps {
-  menus: MenuItem[]
-  locale: string
-}
-
-export default function Footer({ menus, locale }: FooterProps) {
-  const renderFooterLink = (item: MenuItem) => {
-    if (!item.visible) return null
-
-    const url = item.url.startsWith('http') ? item.url : `/${locale}${item.url}`
-    
-    return (
-      <li key={item.id || item.url}>
-        <Link
-          href={url}
-          target={item.target}
-          className="text-gray-600 hover:text-gray-900 transition-colors"
-        >
-          {item.label}
-        </Link>
-      </li>
-    )
-  }
-
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">Unified Programmatic Site</h3>
-            <p className="text-gray-400 mb-4">
-              Next.js on Netlify — CMS-as-data — Programmatic SEO
-            </p>
-            <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} All rights reserved.
-            </p>
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">CONTACT INFO</h3>
+            <div className="space-y-2 text-gray-300">
+              <p>123 Fifth Ave, New York, NY 12004, USA.</p>
+              <p>+1 123 456 78 90</p>
+              <p>mail@example.com</p>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-md font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {menus
-                .filter(item => item.visible)
-                .sort((a, b) => (a.order || 0) - (b.order || 0))
-                .slice(0, 5)
-                .map(renderFooterLink)}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-md font-semibold mb-4">Resources</h4>
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale === 'en' ? '' : locale}/about`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/works" className="text-gray-300 hover:text-white transition-colors">
+                  Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale === 'en' ? '' : locale}/contact`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Programmatic Tools */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Tools</h3>
+            <ul className="space-y-2">
               <li>
-                <Link href={`/${locale === 'en' ? '' : locale}/privacy`} className="text-gray-400 hover:text-white transition-colors">
-                  Privacy Policy
+                <Link href="/en/currency" className="text-gray-300 hover:text-white transition-colors">
+                  Currency Converter
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale === 'en' ? '' : locale}/terms`} className="text-gray-400 hover:text-white transition-colors">
-                  Terms of Service
+                <Link href="/en/swift" className="text-gray-300 hover:text-white transition-colors">
+                  SWIFT Codes
+                </Link>
+              </li>
+              <li>
+                <Link href="/hi/currency" className="text-gray-300 hover:text-white transition-colors">
+                  मुद्रा कनवर्टर
+                </Link>
+              </li>
+              <li>
+                <Link href="/fr/currency" className="text-gray-300 hover:text-white transition-colors">
+                  Convertisseur de Devises
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-500">
-            Built with Next.js and deployed on Netlify
-          </p>
+        {/* Copyright */}
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>Copyright © 2025 seashell-owl-443814.hostingersite.com | Powered by seashell-owl-443814.hostingersite.com</p>
         </div>
       </div>
     </footer>
