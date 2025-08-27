@@ -4,9 +4,9 @@ const NETLIFY_APP_URL = 'https://netlifyhwp.netlify.app'
 
 // Define Next.js paths that should be proxied
 const NEXT_JS_PATHS = [
-  '/en/', '/hi/', '/fr/', '/es/', '/de/',
-  '/admin/', '/api/', '/sitemap.xml', '/robots.txt', '/sitemaps/',
-  '/currency/', '/swift/', '/ops/'
+  '/en', '/hi', '/fr', '/es', '/de',
+  '/admin', '/api', '/sitemap.xml', '/robots.txt', '/sitemaps',
+  '/currency', '/swift', '/ops'
 ]
 
 export const handler: Handler = async (event, context) => {
@@ -17,7 +17,9 @@ export const handler: Handler = async (event, context) => {
       : ''
 
     // Check if the path should be proxied
-    const shouldProxy = NEXT_JS_PATHS.some(prefix => path.startsWith(prefix))
+    const shouldProxy = NEXT_JS_PATHS.some(prefix => 
+      path === prefix || path.startsWith(prefix + '/')
+    )
 
     if (!shouldProxy) {
       return {
