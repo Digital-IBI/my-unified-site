@@ -146,7 +146,7 @@ export function generateSitemapIndexXml(chunks: SitemapChunk[]): string {
 
 // Generate robots.txt content
 export function generateRobotsTxt(chunks: SitemapChunk[]): string {
-  const baseUrl = process.env.SITE_URL || 'https://seashell-owl-443814.hostingersite.com'
+  const baseUrl = process.env.SITE_URL || 'https://tools.seashell-owl-443814.hostingersite.com'
   
   const sitemapUrls = chunks.map((chunk, index) => 
     `${baseUrl}/sitemaps/sitemap-${index}.xml`
@@ -233,7 +233,7 @@ export class SitemapGenerator {
 
   constructor(config: Partial<SitemapConfig> = {}) {
     this.config = {
-      baseUrl: process.env.SITE_URL || 'https://seashell-owl-443814.hostingersite.com',
+      baseUrl: process.env.SITE_URL || 'https://tools.seashell-owl-443814.hostingersite.com',
       maxUrlsPerSitemap: 50000,
       maxSitemapSize: 50 * 1024 * 1024, // 50MB
       changefreq: 'weekly',

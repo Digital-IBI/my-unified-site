@@ -8,7 +8,7 @@ const nextConfig = {
   // Experimental features
   experimental: {
     serverActions: {
-      allowedOrigins: ['localhost:3000', '*.netlify.app', 'seashell-owl-443814.hostingersite.com']
+      allowedOrigins: ['localhost:3000', '*.netlify.app', 'seashell-owl-443814.hostingersite.com', 'tools.seashell-owl-443814.hostingersite.com']
     }
   },
 
@@ -85,7 +85,7 @@ const nextConfig = {
 
   // Environment variables
   env: {
-    SITE_URL: process.env.SITE_URL || 'https://seashell-owl-443814.hostingersite.com',
+    SITE_URL: process.env.SITE_URL || 'https://tools.seashell-owl-443814.hostingersite.com',
     WORDPRESS_URL: 'https://seashell-owl-443814.hostingersite.com',
   },
 }
